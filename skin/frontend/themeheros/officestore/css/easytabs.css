@@ -1,0 +1,25 @@
+/********************** Tabs */
+/*.col-main .product-view .product-collateral {border:solid 1px #e2e2e2;}*/
+.product-view .tabs { margin:0 0 -1px 0 !important; overflow:hidden;  zoom: 1; position:relative;}
+.product-view .tabs li                {  font-size:0.9em; line-height:1em; margin:0px; width:auto !important; box-shadow:none;  }
+.product-view .tabs li.first a          { border-left:none; }
+.product-view .tabs li:last-child { border:none;}           { border-right:none; }
+.product-view .tabs a{ display:block; padding:15px 20px; margin:0 -1px 0 0px; color:#666; font-size:12px; border-bottom:solid 1px #e2e2e2; border-left:solid 1px #e2e2e2; border-right:solid 1px #e2e2e2;}
+.product-view .tabs a:hover{ color:#666;}
+.product-view .tabs li.active a,.product-view .tabs li.active a:hover {color:#2499CE; background:#fff; margin:0 -1px 0 0; border-bottom:none;}
+
+ @media (max-width: 12000px) { .product-view .tabs li{float:left;}}
+ @media (max-width: 768px)  { .product-view .tabs li{float:none;}}
+ @media (max-width: 320px)  { .product-view .tabs li{float:none;}}
+
+#product_tabs_tags_tabbed_contents.input-box input	{ width: 300px; }
+#product_tabs_tags_tabbed_contents .input-box	{ width:100%; /*width: 300px;*/ /*float:left;*/ margin-right: 10px;}
+#product_tabs_related_tabbed_contents li	{ float:left; margin-right: 10px;}
+#product_tabs_related_tabbed_contents ol	{ clear: both;}
+.product-collateral:after { content:"."; display:block; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; zoom: 1;}
+.product-collateral{border:solid 1px #dbd8ce; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;}
+#product_tabs_description_tabbed_contents ul { margin:0; width:100% !important; padding:0px; float:left;}
+#product_tabs_description_tabbed_contents .std { /*margin:10px; width:98%;*/ padding:0px; float:left; text-align:justify;}
+#product_tabs_additional_tabbed_contents .box-collateral { margin:10px; width:98%; float:left;}
+#product_tabs_additional_tabbed_contents .box-tags { margin:10px !important; width:98%; float:left;}
+.padder {padding:15px; overflow:hidden; font-size:12px; line-height:17px;}

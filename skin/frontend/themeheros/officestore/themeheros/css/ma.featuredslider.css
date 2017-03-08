@@ -1,0 +1,99 @@
+/*
+ * jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+ 
+/* Browser Resets */
+.ma-featuredproductslider-container .flex-container a:active,
+.ma-featuredproductslider-container .flexslider a:active,
+.ma-featuredproductslider-container .flex-container a:focus,
+.ma-featuredproductslider-container .flexslider a:focus  {outline: none;}
+.ma-featuredproductslider-container .slides,
+.ma-featuredproductslider-container .flex-control-nav,
+.ma-featuredproductslider-container .flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+/* FlexSlider Necessary Styles
+*********************************/ 
+.ma-featuredproductslider-container .flexslider {margin: 0; padding: 0;}
+.ma-featuredproductslider-container .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; margin:10px 12px;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.ma-featuredproductslider-container1 .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; margin:10px 12px;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.ma-featuredproductslider-container .flexslider .slides img {  display: inline-block;}
+.ma-featuredproductslider-container .flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.ma-featuredproductslider-container .slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; float:left;} 
+html[xmlns] .ma-featuredproductslider-container .slides {display: block;} 
+* html .ma-featuredproductslider-container .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+@font-face { font-family: 'calibriregular'; src: url('calibri-webfont.html'); src: url('calibri-webfontd41d.html?#iefix') format('embedded-opentype'), url('calibri-webfont-2.html') format('woff'), url('calibri-webfont-3.html') format('truetype'), url('calibri-webfont-4.html#calibriregular') format('svg'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'calibribold'; src: url('calibrib-webfont.html'); src: url('calibrib-webfontd41d.html?#iefix') format('embedded-opentype'), url('calibrib-webfont-2.html') format('woff'), url('calibrib-webfont-3.html') format('truetype'), url('calibrib-webfont-4.html#calibribold') format('svg'); font-weight: normal; font-style: normal; }
+
+.no-js .ma-featuredproductslider-container .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.ma-featuredproductslider-container .flexslider {margin: 0 0 20px; position: relative; zoom: 1;}
+.ma-featuredproductslider-container .flex-viewport {max-height: 2000px; margin:0 37px; overflow:hidden; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease; padding:0 0 0 122px;}
+.ma-featuredproductslider-container1 .flex-viewport {max-height: 2000px; margin:0 37px; overflow:hidden; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease; padding:0 0 0 122px;}
+.ma-featuredproductslider-container .loading .flex-viewport {max-height: 300px;}
+.ma-featuredproductslider-container .flexslider .slides {zoom: 1;}
+
+.ma-featuredproductslider-container .featuredproductslider-item { margin-right: 15px; text-align: center;  }
+
+
+.ma-featured-slider-title { text-align: center; }
+.ma-featured-slider-title h2{font-size:14px; color:#201f1f; padding:5px 11px; line-height:20px; border-bottom:solid 1px #c3d594; background:#e3efc3; text-align:left; margin:1px; font-weight:normal; font-family: 'calibribold', Arial, Helvetica, sans-serif;}
+
+/* Direction Nav */
+.ma-featuredproductslider-container .flex-direction-nav {*height: 0; left:0; position:absolute; right: 0; top:100px;}
+.ma-featuredproductslider-container1 .flex-direction-nav {*height: 0; left:0; position:absolute; right: 0; top:100px;}
+
+.ma-featuredproductslider-container .flex-direction-nav li a{width:24px; height:45px; background:#e9eded; font-size:0px; position:absolute; top:0; -webkit-border-radius:30px; -moz-border-radius:30px; border-radius:30px;}
+.ma-featuredproductslider-container1 .flex-direction-nav li a{width:24px; height:45px; background:#e9eded; font-size:0px; position:absolute; top:0; -webkit-border-radius:30px; -moz-border-radius:30px; border-radius:30px;}
+
+.ma-featuredproductslider-container .flexslider .flex-next{right:10px; background:#e9eded url(../images/right-slide.html) no-repeat center center;}
+.ma-featuredproductslider-container .flexslider .flex-prev{left:10px; background:#e9eded url(../images/left-slide.html) no-repeat center center;}
+.ma-featuredproductslider-container1 .flexslider .flex-next{right:10px; background:#e9eded url(../images/right-slide.html) no-repeat center center;}
+.ma-featuredproductslider-container1 .flexslider .flex-prev{left:10px; background:#e9eded url(../images/left-slide.html) no-repeat center center;}
+
+.ma-featuredproductslider-container .flexslider:hover .flex-next:hover, .ma-featuredproductslider-container .flexslider:hover .flex-prev:hover {opacity: 1;}
+.ma-featuredproductslider-container .flex-direction-nav .flex-disabled {opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.ma-featuredproductslider-container .flex-control-nav {width: 100%; position: absolute; top:-24px; text-align: right;}
+.ma-featuredproductslider-container .flex-control-nav li { margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
+.ma-featuredproductslider-container .flex-control-paging li a {width: 11px; font-size:0px; height: 11px; display: block; background: #72bab1; cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px;}
+.ma-featuredproductslider-container .flex-control-paging li a.flex-active { background: #277e72; cursor: default; }
+
+.ma-featuredproductslider-container .flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+.ma-featuredproductslider-container .flex-control-thumbs li {width: 25%; float: left; margin: 0;}
+.ma-featuredproductslider-container .flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+.ma-featuredproductslider-container .flex-control-thumbs img:hover {opacity: 1;}
+.ma-featuredproductslider-container .flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
+
+@media screen and (max-width: 860px) {
+  .ma-featuredproductslider-container .flex-direction-nav .flex-prev {opacity: 1;}
+  .ma-featuredproductslider-container .flex-direction-nav .flex-next {opacity: 1; }
+}
+.ma-featuredproductslider-container .ma-loading {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	z-index: 99;
+	background: url(../images/loader.html) no-repeat ;
+	top: 50%;
+	left: 50%;
+	margin: -8px 0 0 -8px;
+}
+.new-line {border-bottom: 2px solid #DDDDDD; float: left; margin: -2px -18% 0 25%; width: 73%;}
